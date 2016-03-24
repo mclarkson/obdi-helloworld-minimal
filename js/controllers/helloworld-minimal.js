@@ -162,33 +162,31 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   $scope.helloDialog = function (name) {
   // --------------------------------------------------------------------
 
-    $scope.classname = classname;
-
     var modalInstance = $uibModal.open({
       templateUrl: 'helloModal.html',
       controller: $scope.ModalInstanceCtrl,
       size: 'sm',
       resolve: {
-        // the classname variable is passed to the ModalInstanceCtrl
-        classname: function () {
-          return $scope.classname;
+        // the name variable is passed to the ModalInstanceCtrl
+        name: function () {
+          return $scope.name;
         }
       }
     });
 
-    modalInstance.result.then(function (classname) {
-      $log.info('Will delete: ' + $scope.classname );
+    modalInstance.result.then(function (name) {
+      $log.info('Will delete: ' + $scope.name );
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
 
   // --------------------------------------------------------------------
-  $scope.ModalInstanceCtrl = function ($scope, $uibModalInstance, classname) {
+  $scope.ModalInstanceCtrl = function ($scope, $uibModalInstance, name) {
   // --------------------------------------------------------------------
 
-    // So the template can access 'classname' in this new scope
-    $scope.classname = classname;
+    // So the template can access 'name' in this new scope
+    $scope.name = name;
 
     $scope.ok = function () {
       $uibModalInstance.close();
