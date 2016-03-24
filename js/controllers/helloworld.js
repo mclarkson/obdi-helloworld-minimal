@@ -18,7 +18,7 @@
 // AngularJS Controller
 // ------------------------------------------------------------------------
 
-mgrApp.controller("helloWorld", function ($scope,$http,$uibModal,$log,
+mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
       $timeout,baseUrl,$rootScope) {
 
   $scope.environments = [];

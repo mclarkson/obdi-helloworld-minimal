@@ -35,7 +35,7 @@ ipport="127.0.0.1:443"
 # Create a temporary file and a trap to delete it
 #
 
-t="/tmp/install_helloworld_$$"
+t="/tmp/install_helloworld_minimal_$$"
 touch $t
 [[ $? -ne 0 ]] && {
     echo "Could not create temporary file. Aborting."
@@ -48,7 +48,7 @@ trap "rm -f -- '$t'" EXIT
 #
 
 curl -k -d '{
-    "Name":"helloworld",
+    "Name":"helloworld-minimal",
     "Desc":"Hello World plugin.",
     "HasView":1,
     "Parent":""
@@ -64,11 +64,11 @@ id=`grep Id $t | grep -Eo "[0-9]+"`
 #
 
 curl -k -d '{
-    "Name":"helloworld.js",
+    "Name":"helloworld-minimal.js",
     "Desc":"Controller for HelloWorld.",
     "Type":1,
     "PluginId":'"$id"',
-    "Url":"helloworld/js/controllers/helloworld.js"
+    "Url":"helloworld-minimal/js/controllers/helloworld-minimal.js"
 }' $proto://$ipport/api/admin/$guid/files
 
 # Delete the temporary file and delete the trap
