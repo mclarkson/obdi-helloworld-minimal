@@ -72,9 +72,9 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   $scope.Restart = function() {
   // ----------------------------------------------------------------------
     clearMessages();
+    $scope.btnsayhellodisabled = true;
     $scope.btnenvlistdisabled = false;
     $scope.envchosen = false;
-    $scope.btnsayhellodisabled = false;
   };
 
   // ----------------------------------------------------------------------
