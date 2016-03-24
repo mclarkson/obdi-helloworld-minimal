@@ -72,19 +72,9 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   $scope.Restart = function() {
   // ----------------------------------------------------------------------
     clearMessages();
-    $scope.btnlistserversdisabled = true;
     $scope.btnenvlistdisabled = false;
-    $scope.btnapplydisabled = true;
-    $scope.btnreviewdisabled = true;
-    $scope.listbtnpressed = false;
-    $scope.serverlist_ready = false;
-    $scope.serverlist_empty = false;
     $scope.envchosen = false;
-    $scope.reviewpage.enabled = false;
-    $scope.applypage.enabled = false;
-    $scope.applypage.complete = false;
-    $scope.resultlist_empty = false;
-    $scope.resultlist_ready = false;
+    $scope.btnsayhellodisabled = false;
   };
 
   // ----------------------------------------------------------------------
@@ -94,7 +84,6 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
     $event.preventDefault();
     $event.stopPropagation();
     $scope.envchosen = true;
-    $scope.btnlistserversdisabled = false;
     $scope.btnenvlistdisabled = true;
     $scope.env = envobj;
     $scope.btnsayhellodisabled = false;
@@ -159,8 +148,10 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   // Modal dialog
 
   // --------------------------------------------------------------------
-  $scope.helloDialog = function (name) {
+  $scope.helloDialog = function () {
   // --------------------------------------------------------------------
+
+    var name = $scope.env.DispName;
 
     var modalInstance = $uibModal.open({
       templateUrl: 'helloModal.html',
@@ -169,13 +160,16 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
       resolve: {
         // the name variable is passed to the ModalInstanceCtrl
         name: function () {
-          return $scope.env.DispName;
+          return name;
         }
       }
     });
 
     modalInstance.result.then(function (name) {
-      $log.info('Will delete: ' + $scope.name );
+      $log.info('Will do something with: ' + $scope.name );
+      //
+      // Call a function to do something here
+      //
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
