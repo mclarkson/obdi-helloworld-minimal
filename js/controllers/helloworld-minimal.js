@@ -41,11 +41,14 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   $scope.envchosen = false;
   $scope.status = {};
 
+  // Disable the search box
   $rootScope.$broadcast( "searchdisabled", true );
 
   // ----------------------------------------------------------------------
   $scope.$on( "search", function( event, args ) {
   // ----------------------------------------------------------------------
+  // Not used since search is disabled
+
     if( $scope.grainsview.show == false ) {
       $scope.hostfilter = args;
       $scope.checkbox_allnone = false;
@@ -87,7 +90,7 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
     $scope.btnenvlistdisabled = true;
     $scope.env = envobj;
     $scope.btnsayhellodisabled = false;
-    $scope.status.isopen = !$scope.status.isopen;
+    $scope.status.isopen = !$scope.status.isopen; //close the dropdown
   };
 
   // ----------------------------------------------------------------------
@@ -98,7 +101,8 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
     $scope.btnenvlistdisabled = true;
     $scope.btnsayhellodisabled = false;
 
-    $rootScope.$broadcast( "setsearchtext", $scope.hostfilter );
+    // Reset the search text (not used since search is disabled)
+    //$rootScope.$broadcast( "setsearchtext", $scope.previousfilter );
   }
 
   // ----------------------------------------------------------------------
@@ -143,6 +147,7 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
     });
   };
 
+  // Get the list of environments straight away
   $scope.FillEnvironmentsTable();
 
   // Modal dialog
