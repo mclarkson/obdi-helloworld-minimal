@@ -169,7 +169,7 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
       resolve: {
         // the name variable is passed to the ModalInstanceCtrl
         name: function () {
-          return $scope.name;
+          return $scope.env.DispName;
         }
       }
     });
