@@ -20,7 +20,7 @@
 
 <!-- A modal dialog box -->
 
-<script type="text/ng-template" id="myModalContent.html">
+<script type="text/ng-template" id="helloModal.html">
     <div class="modal-header">
         <h3 class="modal-title">Hello World</h3>
     </div>
@@ -96,7 +96,7 @@
         <div class="btn-group">
           <button type="button" class="btn btn-primary" uib-dropdown-toggle
           style="margin-left: 8px;" 
-          ng-click="JobList()" ng-disabled="btnsayhellodisabled">
+          ng-click="helloDialog('World!')" ng-disabled="btnsayhellodisabled">
             Say Hello
           </button>
         </div>

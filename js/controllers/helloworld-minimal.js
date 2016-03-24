@@ -159,13 +159,13 @@ mgrApp.controller("helloWorldMinimal", function ($scope,$http,$uibModal,$log,
   // Modal dialog
 
   // --------------------------------------------------------------------
-  $scope.dialog = function (name) {
+  $scope.helloDialog = function (name) {
   // --------------------------------------------------------------------
 
     $scope.classname = classname;
 
     var modalInstance = $uibModal.open({
-      templateUrl: 'myModalContent.html',
+      templateUrl: 'helloModal.html',
       controller: $scope.ModalInstanceCtrl,
       size: 'sm',
       resolve: {
