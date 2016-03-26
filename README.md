@@ -1,4 +1,4 @@
-# obdi-helloworld
+# obdi-helloworld-minimal
 Example minimal Obdi plugin.
 
 ## Screenshot
