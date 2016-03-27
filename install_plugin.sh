@@ -16,16 +16,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-# saltconfigserver plugin
+# helloworld-minimal plugin
 
 [[ -z $guid ]] && {
   echo "ERROR: environment variable 'guid' must be set."
   exit 1
 }
-
-##
-## TODO: This plugin depends on salt
-##
 
 proto="https"
 opts="-k -s" # don't check ssl cert, silent
