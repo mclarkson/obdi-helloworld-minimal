@@ -47,7 +47,7 @@ curl -k -d '{
     "Name":"helloworld-minimal",
     "Desc":"Hello World plugin.",
     "HasView":1,
-    "Parent":""
+    "Parent":"helloworld"
 }' $proto://$ipport/api/admin/$guid/plugins | tee $t
 
 # Grab the id of the last insert
