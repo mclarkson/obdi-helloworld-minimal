@@ -1,0 +1,6 @@
+{
+  "name": "Obdi-helloworld-minimal",
+  "tagline": "Minimal Obdi Hello World plugin.",
+  "body": "# obdi-helloworld-minimal\r\nExample minimal Obdi plugin.\r\n\r\n## Screenshot\r\n\r\n![](images/helloworld.png?raw=true)\r\n\r\n## What is it?\r\nA starting point for writing a simple plugin.\r\n\r\nThis plugin does not supply a REST endpoint.<br>\r\nThis plugin does not run scripts on workers.<br>\r\nThis plugin does not use a private sqlite database.\r\n\r\nSimilar plugin: [obdi-core-systemjobs](https://github.com/mclarkson/obdi-core-systemjobs)\r\n\r\nSee [obdi-dev-repository](https://github.com/mclarkson/obdi-dev-repository)\r\nfor more information.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
